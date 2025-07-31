@@ -1,0 +1,101 @@
+[gd_scene load_steps=14 format=3 uid="uid://drellvl8cqcpl"]
+
+[ext_resource type="Script" uid="uid://ds1ak18pst8ys" path="res://scenes/ui/inventory/toolbar_panel.gd" id="1_7dfjo"]
+[ext_resource type="PackedScene" uid="uid://ckbey1c2f5qhu" path="res://scenes/ui/inventory/toolbar_slot.tscn" id="1_7ofwa"]
+[ext_resource type="Resource" uid="uid://bnb8pwkbscem" path="res://resources/item_lists/player_inventory.tres" id="2_6vqyu"]
+[ext_resource type="Shader" uid="uid://cmgdylff2p1ac" path="res://resources/shaders/selection_outline.gdshader" id="4_11df6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7dfjo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_11df6"]
+resource_local_to_scene = true
+shader = ExtResource("4_11df6")
+shader_parameter/outline_width = 0.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v8roc"]
+resource_local_to_scene = true
+shader = ExtResource("4_11df6")
+shader_parameter/outline_width = 0.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t1n5d"]
+resource_local_to_scene = true
+shader = ExtResource("4_11df6")
+shader_parameter/outline_width = 0.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p40aq"]
+resource_local_to_scene = true
+shader = ExtResource("4_11df6")
+shader_parameter/outline_width = 0.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ig3b6"]
+resource_local_to_scene = true
+shader = ExtResource("4_11df6")
+shader_parameter/outline_width = 0.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8dtrb"]
+resource_local_to_scene = true
+shader = ExtResource("4_11df6")
+shader_parameter/outline_width = 0.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_re7vw"]
+resource_local_to_scene = true
+shader = ExtResource("4_11df6")
+shader_parameter/outline_width = 0.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tkejr"]
+resource_local_to_scene = true
+shader = ExtResource("4_11df6")
+shader_parameter/outline_width = 0.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+
+[node name="ToolbarPanel" type="PanelContainer"]
+offset_right = 252.0
+offset_bottom = 32.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7dfjo")
+script = ExtResource("1_7dfjo")
+inventory_resource = ExtResource("2_6vqyu")
+
+[node name="SlotContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 4
+
+[node name="ToolbarSlot" parent="SlotContainer" instance=ExtResource("1_7ofwa")]
+material = SubResource("ShaderMaterial_11df6")
+layout_mode = 2
+
+[node name="ToolbarSlot2" parent="SlotContainer" instance=ExtResource("1_7ofwa")]
+material = SubResource("ShaderMaterial_v8roc")
+layout_mode = 2
+
+[node name="ToolbarSlot3" parent="SlotContainer" instance=ExtResource("1_7ofwa")]
+material = SubResource("ShaderMaterial_t1n5d")
+layout_mode = 2
+
+[node name="ToolbarSlot4" parent="SlotContainer" instance=ExtResource("1_7ofwa")]
+material = SubResource("ShaderMaterial_p40aq")
+layout_mode = 2
+
+[node name="ToolbarSlot5" parent="SlotContainer" instance=ExtResource("1_7ofwa")]
+material = SubResource("ShaderMaterial_ig3b6")
+layout_mode = 2
+
+[node name="ToolbarSlot6" parent="SlotContainer" instance=ExtResource("1_7ofwa")]
+material = SubResource("ShaderMaterial_8dtrb")
+layout_mode = 2
+
+[node name="ToolbarSlot7" parent="SlotContainer" instance=ExtResource("1_7ofwa")]
+material = SubResource("ShaderMaterial_re7vw")
+layout_mode = 2
+
+[node name="ToolbarSlot8" parent="SlotContainer" instance=ExtResource("1_7ofwa")]
+material = SubResource("ShaderMaterial_tkejr")
+layout_mode = 2

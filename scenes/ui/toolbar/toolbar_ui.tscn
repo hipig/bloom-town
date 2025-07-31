@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://75u8foqwo7v5"]
+
+[ext_resource type="Script" uid="uid://veat7vm7d8u7" path="res://scenes/ui/toolbar/toolbar_ui.gd" id="1_2f1cn"]
+[ext_resource type="PackedScene" uid="uid://ckbey1c2f5qhu" path="res://scenes/ui/inventory/toolbar_slot.tscn" id="2_bcjxr"]
+
+[node name="ToolbarUI" type="CanvasLayer"]
+script = ExtResource("1_2f1cn")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -142.0
+offset_top = -48.0
+offset_right = 142.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 4
+
+[node name="ToolbarSlot" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_bcjxr")]
+layout_mode = 2
+
+[node name="ToolbarSlot2" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_bcjxr")]
+layout_mode = 2
+
+[node name="ToolbarSlot3" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_bcjxr")]
+layout_mode = 2
+
+[node name="ToolbarSlot4" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_bcjxr")]
+layout_mode = 2
+
+[node name="ToolbarSlot5" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_bcjxr")]
+layout_mode = 2
+
+[node name="ToolbarSlot6" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_bcjxr")]
+layout_mode = 2
+
+[node name="ToolbarSlot7" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_bcjxr")]
+layout_mode = 2
+
+[node name="ToolbarSlot8" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_bcjxr")]
+layout_mode = 2

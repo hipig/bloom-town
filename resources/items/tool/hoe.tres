@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ToolItemData" load_steps=3 format=3 uid="uid://nxkyckt5c6wh"]
+
+[ext_resource type="Texture2D" uid="uid://dqks2gvx407lp" path="res://assets/textures/icons/tool/Hoe.png" id="1_8y5a2"]
+[ext_resource type="Script" uid="uid://bbiokcr0g2ja6" path="res://scripts/resources/items/tool_item_data.gd" id="1_mrabw"]
+
+[resource]
+script = ExtResource("1_mrabw")
+tool_type = 4
+id = "hoe"
+name = "锄头"
+icon = ExtResource("1_8y5a2")
+max_stack_size = 1
+description = "一把锄头，用来耕地"
+metadata/_custom_type_script = "uid://cydutbd0aiuc1"

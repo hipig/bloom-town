@@ -29,6 +29,10 @@ func _process(delta: float) -> void:
 		current_state._on_update(delta, actor)
 		current_state._on_next(actor)
 
+func _unhandled_input(event: InputEvent) -> void:
+	if current_state:
+		current_state._on_input(event, actor)
+
 func transition_to(state_name: String) -> void:
 	if state_name == current_state.name.to_lower():
 		return

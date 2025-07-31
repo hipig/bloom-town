@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ToolItemData" load_steps=3 format=3 uid="uid://nd5o6y758n0m"]
+
+[ext_resource type="Script" uid="uid://bbiokcr0g2ja6" path="res://scripts/resources/items/tool_item_data.gd" id="1_8d2eb"]
+[ext_resource type="Texture2D" uid="uid://1inlugmw013g" path="res://assets/textures/icons/tool/Pickaxe.png" id="1_oj804"]
+
+[resource]
+script = ExtResource("1_8d2eb")
+tool_type = 2
+id = "pickaxe"
+name = "十字镐"
+icon = ExtResource("1_oj804")
+max_stack_size = 1
+description = "一把十字镐，用来挖矿石"
+metadata/_custom_type_script = "uid://cydutbd0aiuc1"

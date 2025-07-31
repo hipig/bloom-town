@@ -9,6 +9,9 @@ func _on_enter(_actor: Node) -> void:
 
 func _on_update(_delta: float, _actor: Node) -> void:
 	pass
+	
+func _on_input(_event: InputEvent, _actor: Node) -> void:
+	pass
 
 func _on_next(_actor: Node) -> void:
 	pass

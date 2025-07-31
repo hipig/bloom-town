@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=3 uid="uid://ckbey1c2f5qhu"]
+
+[ext_resource type="Texture2D" uid="uid://cd7m3efd4jqee" path="res://assets/textures/ui/boxes/BGbox_02A.png" id="1_cxx4f"]
+[ext_resource type="Script" uid="uid://bnewppu52jw44" path="res://scenes/ui/inventory/toolbar_slot.gd" id="2_665u5"]
+[ext_resource type="Shader" uid="uid://cmgdylff2p1ac" path="res://resources/shaders/selection_outline.gdshader" id="3_665u5"]
+[ext_resource type="Texture2D" uid="uid://c3adtef60cxbo" path="res://assets/textures/ui/cursor/Hand03_Up.png" id="3_lu3wg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jseco"]
+atlas = ExtResource("1_cxx4f")
+region = Rect2(6, 6, 36, 36)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0niil"]
+texture = SubResource("AtlasTexture_jseco")
+texture_margin_left = 7.0
+texture_margin_top = 8.0
+texture_margin_right = 7.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr3gk"]
+atlas = ExtResource("3_lu3wg")
+region = Rect2(4, 2, 8, 11)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lu3wg"]
+resource_local_to_scene = true
+shader = ExtResource("3_665u5")
+shader_parameter/outline_width = 0.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+
+[node name="ToolbarSlot" type="Button"]
+custom_minimum_size = Vector2(28, 28)
+offset_right = 28.0
+offset_bottom = 28.0
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_0niil")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_0niil")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0niil")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0niil")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0niil")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_665u5")
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -9.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = -2
+
+[node name="SelectedTextureRect" type="TextureRect" parent="MarginContainer3"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_pr3gk")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+material = SubResource("ShaderMaterial_lu3wg")
+layout_mode = 2
+stretch_mode = 5
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = -2
+
+[node name="Label" type="Label" parent="MarginContainer2"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 2

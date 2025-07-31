@@ -1,6 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmpnpmg5k2dmn"]
+[gd_scene load_steps=11 format=3 uid="uid://bmpnpmg5k2dmn"]
 
 [ext_resource type="Texture2D" uid="uid://2peqmvfsx3d2" path="res://assets/textures/objects/rock/Rock_3.png" id="1_hjm6g"]
+[ext_resource type="Script" uid="uid://bm05j1osi8rfp" path="res://scenes/objects/enviros/rock/rock.gd" id="1_j5a2f"]
+[ext_resource type="PackedScene" uid="uid://dar4yqnvuvma5" path="res://scenes/components/health_component.tscn" id="2_tfhf0"]
+[ext_resource type="PackedScene" uid="uid://bnfg5hwtd888e" path="res://scenes/components/hurt_box_component.tscn" id="3_hba2d"]
+[ext_resource type="Shader" uid="uid://rmicdts0achg" path="res://resources/shaders/hit_flash.gdshader" id="5_gvcpb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j5a2f"]
+resource_local_to_scene = true
+shader = ExtResource("5_gvcpb")
+shader_parameter/flash_intensity = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d4afo"]
 atlas = ExtResource("1_hjm6g")
@@ -8,9 +17,18 @@ atlas = ExtResource("1_hjm6g")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjm6g"]
 size = Vector2(12, 6)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mhlw7"]
+shader = ExtResource("5_gvcpb")
+shader_parameter/flash_intensity = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5a2f"]
+size = Vector2(12, 13)
+
 [node name="Rock" type="Node2D"]
+script = ExtResource("1_j5a2f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_j5a2f")
 position = Vector2(0, -6)
 texture = SubResource("AtlasTexture_d4afo")
 
@@ -19,3 +37,15 @@ texture = SubResource("AtlasTexture_d4afo")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_hjm6g")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_tfhf0")]
+max_health = 2.0
+
+[node name="HurtBoxComponent" parent="." instance=ExtResource("3_hba2d")]
+material = SubResource("ShaderMaterial_mhlw7")
+required_tool_type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent"]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_j5a2f")
+debug_color = Color(0.81002, 0.412068, 0, 0.42)

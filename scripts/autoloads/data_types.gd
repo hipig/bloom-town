@@ -1,8 +1,11 @@
+@tool
 extends Node
 
 enum ToolType {
 	None,
 	Axe,
 	PickAxe,
-	Shovel
+	Shovel,
+	Hoe,
+	WateringCan
 }

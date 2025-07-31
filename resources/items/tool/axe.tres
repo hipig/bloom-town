@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ToolItemData" load_steps=3 format=3 uid="uid://bspx8upy7ashj"]
+
+[ext_resource type="Texture2D" uid="uid://dyq3lvb6hl7o6" path="res://assets/textures/icons/tool/Axe.png" id="1_1sm67"]
+[ext_resource type="Script" uid="uid://bbiokcr0g2ja6" path="res://scripts/resources/items/tool_item_data.gd" id="1_24y4m"]
+
+[resource]
+script = ExtResource("1_24y4m")
+tool_type = 1
+id = "axe"
+name = "斧子"
+icon = ExtResource("1_1sm67")
+max_stack_size = 1
+description = "一把斧子，用来砍树"
+metadata/_custom_type_script = "uid://cydutbd0aiuc1"

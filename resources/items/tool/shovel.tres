@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ToolItemData" load_steps=3 format=3 uid="uid://7jvasqujec17"]
+
+[ext_resource type="Script" uid="uid://bbiokcr0g2ja6" path="res://scripts/resources/items/tool_item_data.gd" id="1_4htrt"]
+[ext_resource type="Texture2D" uid="uid://bug7p08d8aqb8" path="res://assets/textures/icons/tool/Shovel.png" id="1_wnbqy"]
+
+[resource]
+script = ExtResource("1_4htrt")
+tool_type = 3
+id = "shovel"
+name = "铲子"
+icon = ExtResource("1_wnbqy")
+max_stack_size = 1
+description = "一把铲子，可以破坏地形"
+metadata/_custom_type_script = "uid://cydutbd0aiuc1"

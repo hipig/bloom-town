@@ -23,17 +23,19 @@ tile_set = ExtResource("2_yfexr")
 y_sort_enabled = true
 tile_set = ExtResource("2_yfexr")
 
-[node name="Object" type="TileMapLayer" parent="."]
+[node name="Crop" type="TileMapLayer" parent="."]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAVAAwABAAAAAAAAQANAA0ABAAAAAAAAQARAA4ABAAAAAAAAQAZAA8ABAAAAAAAAQAcAA0ABAAAAAAAAQAaAAoABAAAAAAAAQASABAABQAAAAAAAQA=")
-tile_set = ExtResource("2_yfexr")
 
 [node name="Road" type="TileMapLayer" parent="."]
 y_sort_enabled = true
 tile_set = ExtResource("2_yfexr")
 
-[node name="Building" type="TileMapLayer" parent="."]
+[node name="Object" type="TileMapLayer" parent="."]
+z_index = 1
 y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAVAAwABAAAAAAAAQANAA0ABAAAAAAAAQARAA4ABAAAAAAAAQAZAA8ABAAAAAAAAQAcAA0ABAAAAAAAAQAaAAoABAAAAAAAAQASABAABQAAAAAAAQA=")
+tile_set = ExtResource("2_yfexr")
 
-[node name="Crop" type="TileMapLayer" parent="."]
+[node name="Building" type="TileMapLayer" parent="."]
+z_index = 1
 y_sort_enabled = true

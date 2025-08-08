@@ -5,7 +5,7 @@ var path_update_timer: float = 0.0
 
 func _on_update(_delta: float, actor: Node) -> void:
 	actor = actor as Player
-	actor.animated_sprite.play("walk_" + actor.animate_direction)
+	actor.animation_player.play("walk/" + actor.animate_direction)
 		
 func _on_next(actor: Node) -> void:
 	actor = actor as Player

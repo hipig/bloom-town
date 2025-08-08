@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
+@onready var character_sprite: CharacterSprite = $CharacterSprite
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hit_box_component: HitBoxComponent = $HitBoxComponent
 @onready var hit_box_collision_shape: CollisionShape2D = $HitBoxComponent/CollisionShape2D
@@ -19,6 +21,7 @@ var current_item: ItemData = null
 
 func _ready() -> void:
 	state_machine.start()
+	character_sprite.set_appearance(0, 7, 0, 1, 0, 3)
 
 func _process(_delta: float) -> void:
 	var movement_direction: Vector2i = get_movement_vector()

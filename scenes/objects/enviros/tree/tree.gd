@@ -4,6 +4,7 @@ class_name TreeObject
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var hurt_box_component: HurtBoxComponent = $HurtBoxComponent
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	hurt_box_component.hurted.connect(_on_hurted)
@@ -11,9 +12,7 @@ func _ready() -> void:
 	
 func _on_hurted(damage: float) -> void:
 	health_component.damage(damage)
-	sprite.material.set_shader_parameter("shake_intensity", 0.8)
-	await get_tree().create_timer(0.8).timeout
-	sprite.material.set_shader_parameter("shake_intensity", 0.0)
+	animation_player.play("shake")
 	
 func _on_died() -> void:
 	call_deferred("queue_free")

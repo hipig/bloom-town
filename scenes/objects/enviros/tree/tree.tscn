@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://o0wnqh3d63vb"]
+[gd_scene load_steps=12 format=3 uid="uid://o0wnqh3d63vb"]
 
 [ext_resource type="Script" uid="uid://q5n14dv4th8d" path="res://scenes/objects/enviros/tree/tree.gd" id="1_p6mrj"]
 [ext_resource type="Shader" uid="uid://dj2lu7q52ccti" path="res://resources/shaders/shake.gdshader" id="2_5jxfw"]
-[ext_resource type="Texture2D" uid="uid://xlkhs5xi0y18" path="res://assets/textures/objects/tree/Tree_medium_1.png" id="3_coeom"]
+[ext_resource type="Texture2D" uid="uid://f8ey6iefg3uu" path="res://assets/textures/objects/tree/tree_shake.png" id="3_p6mrj"]
 [ext_resource type="PackedScene" uid="uid://dar4yqnvuvma5" path="res://scenes/components/health_component.tscn" id="4_7onc5"]
 [ext_resource type="PackedScene" uid="uid://bnfg5hwtd888e" path="res://scenes/components/hurt_box_component.tscn" id="5_mkboq"]
 
@@ -12,9 +12,6 @@ shader = ExtResource("2_5jxfw")
 shader_parameter/shake_intensity = 0.0
 shader_parameter/shake_speed = 20.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3knl7"]
-atlas = ExtResource("3_coeom")
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iecg0"]
 radius = 6.0
 height = 12.0
@@ -22,6 +19,43 @@ height = 12.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6tuuf"]
 radius = 12.0
 height = 28.0
+
+[sub_resource type="Animation" id="Animation_coeom"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_5jxfw"]
+resource_name = "shake"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7onc5"]
+_data = {
+&"RESET": SubResource("Animation_coeom"),
+&"shake": SubResource("Animation_5jxfw")
+}
 
 [node name="Tree" type="Node2D"]
 y_sort_enabled = true
@@ -31,7 +65,10 @@ script = ExtResource("1_p6mrj")
 y_sort_enabled = true
 material = SubResource("ShaderMaterial_qe2es")
 position = Vector2(0, -13)
-texture = SubResource("AtlasTexture_3knl7")
+texture = ExtResource("3_p6mrj")
+hframes = 4
+vframes = 8
+frame = 4
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -49,3 +86,8 @@ required_tool_type = 1
 position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_6tuuf")
 debug_color = Color(0.830489, 0.392918, 0.00754074, 0.42)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7onc5")
+}

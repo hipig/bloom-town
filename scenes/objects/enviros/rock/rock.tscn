@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://bmpnpmg5k2dmn"]
 
-[ext_resource type="Texture2D" uid="uid://2peqmvfsx3d2" path="res://assets/textures/objects/rock/Rock_3.png" id="1_hjm6g"]
 [ext_resource type="Script" uid="uid://bm05j1osi8rfp" path="res://scenes/objects/enviros/rock/rock.gd" id="1_j5a2f"]
 [ext_resource type="PackedScene" uid="uid://dar4yqnvuvma5" path="res://scenes/components/health_component.tscn" id="2_tfhf0"]
 [ext_resource type="PackedScene" uid="uid://bnfg5hwtd888e" path="res://scenes/components/hurt_box_component.tscn" id="3_hba2d"]
+[ext_resource type="Texture2D" uid="uid://so1bpstgjykm" path="res://assets/textures/terrains/base/tiles.png" id="3_j5a2f"]
 [ext_resource type="Shader" uid="uid://rmicdts0achg" path="res://resources/shaders/hit_flash.gdshader" id="5_gvcpb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j5a2f"]
@@ -12,7 +12,8 @@ shader = ExtResource("5_gvcpb")
 shader_parameter/flash_intensity = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d4afo"]
-atlas = ExtResource("1_hjm6g")
+atlas = ExtResource("3_j5a2f")
+region = Rect2(144, 450, 16, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjm6g"]
 size = Vector2(12, 6)

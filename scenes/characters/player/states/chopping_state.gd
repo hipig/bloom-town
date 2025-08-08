@@ -19,8 +19,8 @@ func _on_enter(actor: Node) -> void:
 	actor.hit_box_component.tool_type = DataTypes.ToolType.Axe
 	actor.hit_box_component.damage = 1.0
 	actor.hit_box_collision_shape.position = collision_position
-	actor.animated_sprite.play("chopping_" + actor.animate_direction)
-	actor.animated_sprite.frame_changed.connect(_on_frame_changed.bind(actor))
+	actor.animation_player.play("chopping/" + actor.animate_direction)
+	actor.character_sprite.frame_changed.connect(_on_frame_changed.bind(actor))
 	await actor.animated_sprite.animation_finished
 	is_chopping = false
 	actor.hit_box_collision_shape.disabled = true

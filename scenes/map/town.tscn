@@ -1,14 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://crqfqsjkdtvoy"]
+[gd_scene load_steps=3 format=3 uid="uid://crqfqsjkdtvoy"]
 
-[ext_resource type="PackedScene" uid="uid://dkwlwk4latw5x" path="res://scenes/ui/inventory/inventory_ui.tscn" id="1_7tfs0"]
 [ext_resource type="PackedScene" uid="uid://rkipi718x5dk" path="res://scenes/map/map_layer.tscn" id="2_7tfs0"]
 [ext_resource type="PackedScene" uid="uid://t5skq8jnf46" path="res://scenes/characters/player/player.tscn" id="2_fki36"]
 
 [node name="Town" type="Node2D"]
 metadata/_edit_vertical_guides_ = [-500.0]
 metadata/_edit_horizontal_guides_ = [-499.0]
-
-[node name="InventoryUI" parent="." instance=ExtResource("1_7tfs0")]
 
 [node name="Map" type="Node2D" parent="."]
 y_sort_enabled = true

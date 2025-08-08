@@ -1,22 +1,86 @@
-[gd_scene load_steps=177 format=3 uid="uid://t5skq8jnf46"]
+[gd_scene load_steps=187 format=3 uid="uid://t5skq8jnf46"]
 
 [ext_resource type="Script" uid="uid://3vn6k7034kto" path="res://scenes/characters/player/player.gd" id="1_7uws0"]
+[ext_resource type="Texture2D" uid="uid://p151wnqvnxy7" path="res://assets/textures/characters/bodies/char_all.png" id="2_8y75b"]
+[ext_resource type="Script" uid="uid://caaku0qlf753" path="res://scripts/libs/character_sprite.gd" id="2_svuau"]
 [ext_resource type="Texture2D" uid="uid://d00j3008ajxbj" path="res://assets/textures/characters/heros/swashbuckler/Swashbuckler_idle.png" id="2_t61fv"]
 [ext_resource type="Texture2D" uid="uid://jq6itfwry88t" path="res://assets/textures/characters/heros/swashbuckler/Swashbuckler_woodcutting.png" id="2_xuses"]
 [ext_resource type="PackedScene" uid="uid://ctxqwey44g7hq" path="res://scenes/components/hit_box_component.tscn" id="3_686vu"]
 [ext_resource type="Texture2D" uid="uid://ciuj3laiom4xe" path="res://assets/textures/characters/heros/swashbuckler/Swashbuckler_walk.png" id="3_mk55u"]
+[ext_resource type="AnimationLibrary" uid="uid://disj5qbrot63x" path="res://resources/animations/characters/idle.tres" id="4_8y75b"]
 [ext_resource type="Texture2D" uid="uid://cg27e6yqct1c0" path="res://assets/textures/characters/heros/swashbuckler/Swashbuckler_mining.png" id="4_42irl"]
 [ext_resource type="Script" uid="uid://buxlmsqmwawtv" path="res://scripts/state_machine/state_machine.gd" id="4_qd3e3"]
+[ext_resource type="AnimationLibrary" uid="uid://draietg723sub" path="res://resources/animations/characters/chopping.res" id="4_u6wme"]
 [ext_resource type="Script" uid="uid://cvlmepe81nonb" path="res://scenes/characters/player/states/idle_state.gd" id="5_6avc5"]
 [ext_resource type="Texture2D" uid="uid://ja4yhgppi4b2" path="res://assets/textures/characters/heros/swashbuckler/Swashbuckler_shovelling.png" id="5_djydg"]
 [ext_resource type="Script" uid="uid://b8hhntns6am4l" path="res://scenes/characters/player/states/walk_state.gd" id="6_6avc5"]
+[ext_resource type="AnimationLibrary" uid="uid://osa1x5b031wl" path="res://resources/animations/characters/mining.res" id="6_bxwvg"]
 [ext_resource type="Texture2D" uid="uid://bnhfnky6kuvt3" path="res://assets/textures/characters/heros/swashbuckler/Swashbuckler_hoeing.png" id="6_i1nod"]
+[ext_resource type="AnimationLibrary" uid="uid://cbd0r730a12mq" path="res://resources/animations/characters/tilling.res" id="7_2v4cy"]
 [ext_resource type="Texture2D" uid="uid://cu6jvc3gemc4h" path="res://assets/textures/characters/heros/swashbuckler/Swashbuckler_watering.png" id="7_bsn6e"]
+[ext_resource type="AnimationLibrary" uid="uid://c3sl7vjgdogwx" path="res://resources/animations/characters/walk.res" id="8_j8rto"]
+[ext_resource type="AnimationLibrary" uid="uid://n6diy8pflek" path="res://resources/animations/characters/watering.res" id="9_b4gk5"]
 [ext_resource type="Script" uid="uid://bo8hisg6p5m76" path="res://scenes/characters/player/states/chopping_state.gd" id="12_blysn"]
 [ext_resource type="Script" uid="uid://bgitfjxqmxcy5" path="res://scenes/characters/player/states/mining_state.gd" id="13_ykrpk"]
 [ext_resource type="Script" uid="uid://xlvi43nv3dc7" path="res://scenes/characters/player/states/watering_state.gd" id="14_i1nod"]
 [ext_resource type="Script" uid="uid://brmoqedf3bo7h" path="res://scenes/characters/player/states/shoveling_state.gd" id="15_4kqyw"]
 [ext_resource type="Script" uid="uid://c2gbxjheyi3fp" path="res://scenes/characters/player/states/tilling_state.gd" id="17_4kqyw"]
+
+[sub_resource type="Animation" id="Animation_tebod"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 256, 32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterSprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CharacterSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CharacterSprite:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6nfx3"]
+_data = {
+&"RESET": SubResource("Animation_tebod")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_es5sa"]
 atlas = ExtResource("2_xuses")
@@ -1266,7 +1330,27 @@ y_sort_enabled = true
 collision_layer = 8
 script = ExtResource("1_7uws0")
 
+[node name="CharacterSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_8y75b")
+hframes = 8
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 32)
+script = ExtResource("2_svuau")
+metadata/_custom_type_script = "uid://caaku0qlf753"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6nfx3"),
+&"chopping": ExtResource("4_u6wme"),
+&"idle": ExtResource("4_8y75b"),
+&"mining": ExtResource("6_bxwvg"),
+&"tilling": ExtResource("7_2v4cy"),
+&"walk": ExtResource("8_j8rto"),
+&"watering": ExtResource("9_b4gk5")
+}
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_ro20i")
 animation = &"watering_left"

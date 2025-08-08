@@ -4,7 +4,7 @@ var is_attack: bool = false
 
 func _on_enter(actor: Node) -> void:
 	actor = actor as Player
-	actor.animated_sprite.play("idle_" + actor.animate_direction)
+	actor.animation_player.play("idle/" + actor.animate_direction)
 
 func _on_input(event: InputEvent, _actor: Node) -> void:
 	if event.is_action_pressed("attack"):
